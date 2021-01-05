@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 전달과정</title>
+    <style>
+        section {
+            height: 600px;
+            height: 600px;
+        }
+        section:nth-child(1) {background-color: #ddd;}
+        section:nth-child(2) {background-color: #eee;}
+        section:nth-child(3) {background-color: #bbb;}
+        section:nth-child(4) {background-color: #aaa;}
+    </style>
+</head>
+<body>
+    <section>1</section>
+    <section>2</section>
+    <section>3</section>
+    <section>4</section>
+    <script>
+        window.addEventListener("mousewheel", e => {
+            let list = [];
+            console.time("wheel");
+            for (let i = 0; i < 100000; i++) {
+                list.push(i);
+            }
+            for (let i = 0; i < list.length; i++) {
+                for (let j = 0; j < list.length; j++) {
+                    let temp = list[i];
+                    list[i] = list[j];
+                    list[j] = temp;
+                }
+            }
+            console.timeEnd("wheel");
+        }, {passive:false})
+        window.addEventListener("scroll", e => {
+            let list = [];
+            console.time("scroll");
+            for (let i = 0; i < 100000; i++) {
+                list.push(i);
+            }
+            for (let i = 0; i < list.length; i++) {
+                for (let j = 0; j < list.length; j++) {
+                    let temp = list[i];
+                    list[i] = list[j];
+                    list[j] = temp;
+                }
+            }
+            console.timeEnd("scroll");
+        }, {passive:false});
+    </script>
+</body>
+</html>

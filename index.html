@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // console.log("안녕하세요");
+        // console.error("에러메세지");
+        // console.warn("경고메세지");
+
+        // console.log("%cHello %cY-Y", "color:#c71919;font-size:25px;", "color:#2196f3;font-size:25px;") 
+
+        // let a = {
+        //     "name" : "최선한",
+        //     "age" : 40,
+        //     "phone" : "010-0000-0000",
+
+        //     "intro": function() {
+        //         console.log("안녕하세요");
+        //     }
+        // };
+
+        // console.log(a.intro());
+
+        // const person = {
+        //     name : "최선한"
+        // }
+
+        // person.name = "이수안";
+        // console.log(person);
+
+        // let arr1 = []; // 이게 리스트
+        // arr1.push("안녕");
+        // arr1.push(123);
+        // arr1.push(false);
+
+        // console.log(arr1);
+
+        // for(let i = 0; i < arr1.length; i++) {
+        //     console.log(arr1[i]);
+        // }
+
+        // let arr2 = [1,2,3,4,5,6];
+
+        // let result = arr2.splice(2,1);
+        // let result2 = arr2.slice(2,3);
+
+        // console.log(result);
+        // console.log(result2);
+        // console.log(arr2);
+
+        // let z = [1,2,3,4];
+        // let x = [5,6,7,8];
+
+        // let c = z.concat(x);
+
+        // console.log(c);
+
+        // // 배열 기능 push, splice, slice, concat, indexOf, lastIndexOf -- 여기까지 주석 1
+        // // shift(첫번째 원소 빼기), pop(마지막 원소 빼주는)
+
+        // let arr = ["최선한", "양영", "디지털", "기능반", "웹", "최선한"];
+
+        // let idx = arr.indexOf("디지털");
+
+        // console.log(idx);
+
+        // let idx2 = arr.lastIndexOf("최선한"); // 뒤에서부터 찾기
+        
+        // console.log(idx2);
+
+        // 주석 2
+
+        // 함수에 들어가는 값 = 매개변수
+        // 기능을 모아놓은 것 = 함수
+        // 같은 기능이 반복적으로 실행된다면 그것을 하나의 함수로 몰아서
+        // 함수만 호출하면 그 일이 이루어지게 하는게 함수를 쓰는 이유야.
+        // 인간이 반복작업
+
+        // function add(a, b) {
+
+        //     if(arguments.length == 2) {
+        //         return a + b;
+        //     } else if( arguments.length==3) {
+        //         return a + b + arguments[2];
+        //     }
+        // }
+        // //ES7에서 나온 조립분해
+        // console.log(add(3,4,5));
+
+        // window.addEventListener("click", function(e){
+        //     const{clientX:x, clientY:y, abc = 0} = e;
+        //     console.log(x, y, abc);
+        // })
+
+        // // let {a, b} = obj;
+        // function add2( { a, b } ) {
+        //     return a + b;
+        // }
+
+        // let obj = {x:3, y:7};
+        // add(obj)
+        
+        // 값 전달 참조전달
+        // function mod(value) {
+        //     value.v = value.v - 5;
+        //     return value;
+        // }
+        // number 타입과 스트링타입을 제외하고 전부 참조전달
+        // let a = {a:5, b:3, c:4};
+
+        // let b = {...a};
+        // b.a = 2;
+        // console.log(b);
+        // console.log(a);
+
+        // setInterval(() => console.log("예아 못할거머잇농"), 2000)
+        // let arr = [1,2,3,4,5,6,7,8,9,10];
+
+        // let result = arr.filter(x => x > 5);
+
+        // console.log(result);
+
+        // setInterval(() => console.log("Hell World"), 1000);
+
+        // let users = [
+        // { id: 11, name: 'Adam', age: 19, group: 'editor' },
+        // { id: 47, name: 'John', age: 28, group: 'admin' },
+        // { id: 85, name: 'William', age: 34, group: 'editor' },
+        // { id: 97, name: 'Oliver', age: 28, group: 'admin' }
+        // ];
+
+        //filter, map, reduce에 대한 설명
+        // filter == 걸러내기    
+        // let arr = users.filter(x => x.age >= 20);
+
+        // console.log(arr);
+        //filter를 이용해서 group이 editor을 걸러내는 코드
+        // let arr = users.filter(x => x.group == "editor");
+
+        // console.log(arr);
+        // map == 말 그대로 매핑하기.
+        // let arr = users.map( data => {
+        //     if(data.age >= 20) {
+        //         data.adult = true;
+        //     }else {
+        //         data.adult = false;
+        //     }
+        //     return data;
+        // });
+        // console.log(arr);
+
+        // let map = users.map(data => data.age >= 20 ? data.adult = true : data.adult = false);
+        // console.log(map);
+
+        // let arr2 = users.map(x => ({...x, 'adult': x.age >= 20}))
+
+        // console.log(arr2);
+
+        // reduce는 줄이는 것. 배열에 있는 값을 종합해서 하나의 값으로 만들어 내는게 reduce다.
+
+        // let num = [1,2,3,4,5,6,7,8,9,10]
+
+        //num.reduce( 함수 , 초기값 );
+
+        // let arr = 
+        // num.reduce((sum,x) => ({...sum, s: (sum.s || 0) + x}) , {s:0});
+
+        // console.log(arr);
+
+        let users = [
+        { id: 11, name: 'Adam', age: 19, group: 'editor' },
+        { id: 47, name: 'John', age: 28, group: 'admin' },
+        { id: 85, name: 'William', age: 34, group: 'editor' },
+        { id: 97, name: 'Oliver', age: 28, group: 'admin' }
+        ];
+
+        // let s = users.reduce((result, user) => ({...result, [user.age] : (result[user.age] || 0) + 1}), {});
+
+        // let a = new Set([1,2,3,2,2,3,3,1,1,1,2]);
+
+
+        // console.log([...new Set(users.map(x => x.group))]);
+
+        // let params = {lat: 45, lng: 6, alt: 1000};
+
+        // let a = Object.entries(params).map( p => encodeURIComponent(p[0]) + "=" + encodeURIComponent(p[1])).join("&");
+        // console.log(a);
+    </script>
+</body>
+</html>
